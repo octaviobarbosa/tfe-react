@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import UsuarioEntrada from './UsuarioEntrada';
+import UsuarioSaida from './UsuarioSaida.js';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className='taskBox'>
+        <h1>Tarefa 2</h1>
+
+        <br />
+        <UsuarioEntrada setUser={setUser}/>
+        <br />
+        <br />
+        <UsuarioSaida userName='Octávio Barbosa' />
+
+      </div>
+
+      <br />
+
+      <div className='taskBox'>
+        <h1>Desafio</h1>
+
+        <br />
+
+        <UsuarioSaida userName={user} />
+      </div>
+
+    </>
+  )
 }
 
 export default App;
